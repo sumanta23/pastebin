@@ -1,0 +1,9 @@
+{
+  "name": "pastebin",
+  "version": "0.0.1",
+  "description": "ghostbin nodejs app",
+  "dependencies": {
+    "querystring": "^0.2.0",
+    "request": "^2.67.0"
+  }
+}
