@@ -1,8 +1,8 @@
-var request = require('request');
-
+var Promise = require('bluebird');
+var request = require("request-promise");
 var options;
 
-exports.request = function(method, baseurl, path, query, formdata){
+exports.request = function(method, baseurl, path, formdata){
     if(method === 'post'){
 
         options = { method   : 'POST',
@@ -20,9 +20,8 @@ exports.request = function(method, baseurl, path, query, formdata){
     }
 
 
-    request(options, function (error, response, body) {
+    return request(options, function (error, response, body) {
         if (error) throw new Error(error);
-
-        console.log(body);
+        return body;
     });
 }
